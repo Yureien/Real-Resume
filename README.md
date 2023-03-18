@@ -1,38 +1,15 @@
-# create-svelte
+# Real Resume
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+The rationale while creating this project was pretty clear: that you’re way more than what ends up in one piece of paper. So we began the quest of finding the “Real Resumes”. That's why we’re asking IIT Kharagpur's students and alumni to submit “Real Resumes” where they answer prompts about who they are outside of their resume.
 
-## Creating a project
+Built with :heart: and SvelteKit.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Deployed with CloudFlare Pages.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+## Installation
 
-# create a new project in my-app
-npm create svelte@latest my-app
-```
+1. Use Node.js v16 or v18
+2. Run `yarn install`
+3. Run `yarn dev` to start the development server.
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+Simple, isn't it?

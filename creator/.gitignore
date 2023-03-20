@@ -1,2 +1,3 @@
 firebase-adminsdk.json
 venv/
+__pycache__/

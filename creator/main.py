@@ -1,6 +1,7 @@
 from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, firestore
+from utils import to_title_case
 
 ### SET DATA HERE ###
 ### REQUIRED DATA ###
@@ -52,8 +53,33 @@ image = None
 noContextImage = None
 ### DO NOT MODIFY BELOW CODE ###
 
+for section in LsTaken:
+    section["title"] = to_title_case(section["title"])
+
+for section in BrightSide:
+    section["title"] = to_title_case(section["title"])
+
 cred = credentials.Certificate("firebase-adminsdk.json")
 firebase_admin.initialize_app(cred)
+
+data = {
+    "name": name,
+    "email": email,
+    "hall": hall,
+    "department": department,
+    "graduationYear": graduationYear,
+    "linkedin": linkedin,
+    "facebook": facebook,
+    "instagram": instagram,
+    "website": website,
+    "displayEmail": displayEmail,
+    "bio": bio,
+    "image": image,
+    "noContextImage": noContextImage,
+    "LsTaken": LsTaken,
+    "BrightSide": BrightSide,
+    "createdAt": datetime.now(),
+}
 
 db = firestore.client()
 resume_ref = db.collection("resume")
@@ -61,7 +87,14 @@ resume_ref = db.collection("resume")
 existing = resume_ref.where("email", "==", email).stream()
 for doc in existing:
     print(f"User with email {email} already exists.")
-    exit()
+    print(f"User ID: {doc.id}")
+    if inp := input("Are you sure you want to add this user? (y/n) ").lower() != "y":
+        exit()
+    else:
+        doc_ref = resume_ref.document(doc.id)
+        doc_ref.update(data)
+        print(f"Updated user {name} with ID {doc.id}")
+        exit()
 
 
 if inp := input("Are you sure you want to add this user? (y/n) ").lower() != "y":
@@ -69,23 +102,5 @@ if inp := input("Are you sure you want to add this user? (y/n) ").lower() != "y"
 
 print(f"Adding user {name}...")
 
-resume_ref.add(
-    {
-        "name": name,
-        "email": email,
-        "hall": hall,
-        "department": department,
-        "graduationYear": graduationYear,
-        "linkedin": linkedin,
-        "facebook": facebook,
-        "instagram": instagram,
-        "website": website,
-        "displayEmail": displayEmail,
-        "bio": bio,
-        "image": image,
-        "noContextImage": noContextImage,
-        "LsTaken": LsTaken,
-        "BrightSide": BrightSide,
-        "createdAt": datetime.now(),
-    }
-)
+doc = resume_ref.add(data)
+print(doc[1].id)

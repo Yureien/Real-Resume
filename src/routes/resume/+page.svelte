@@ -5,7 +5,7 @@
 	export let data: PageData;
 </script>
 
-{#each Object.keys(data.batches) as year}
+{#each Object.keys(data.batches).sort((a, b) => Number(b) - Number(a)) as year}
 	<div class="pb-16">
 		<h1 class="text-2xl">Batch of <span class="text-4xl ml-2 font-semibold">{year}</span></h1>
 		<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mt-10">

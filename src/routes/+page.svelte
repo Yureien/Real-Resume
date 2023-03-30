@@ -37,7 +37,7 @@
 <div class="py-16">
 	<h1 class="text-4xl font-semibold">Recently Added</h1>
 	<div
-		class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 mt-10"
+		class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8 mt-10"
 	>
 		{#each data.resumes as resume, i}
 			<Card

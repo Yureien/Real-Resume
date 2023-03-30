@@ -49,5 +49,3 @@ export async function load({ params }: { params: { id: string } }) {
 		BrightSide
 	};
 }
-
-export const prerender = false;

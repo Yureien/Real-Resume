@@ -124,7 +124,7 @@
 				<h3 class="text-gray-500 text-xl font-medium">2025 | MF | RP</h3>
 			</div>
 		</a>
-		<a href="https://www.linkedin.com/in/shivin-gumber/">
+		<a href="https://www.linkedin.com/in/vedant-zope/">
 			<div
 				class="flex flex-col justify-center items-center py-6 px-10
 		shadow-[5px_5px] hover:shadow-[10px_10px] shadow-purple-400 
@@ -135,10 +135,10 @@
 				<div
 					class="w-36 h-36 md:w-40 md:h-40 rounded-3xl
 						shadow-[6px_5px] shadow-amber-600 border-2 border-black
-						bg-cover bg-center bg-[url('/images/shivin-gumber.jpeg')]"
+						bg-cover bg-center bg-[url('/images/vedant-zope.jpeg')]"
 				/>
-				<h1 class="mt-6 mb-2 text-3xl font-semibold">Shivin Gumber</h1>
-				<h3 class="text-gray-500 text-xl font-medium">2025 | CE | RP</h3>
+				<h1 class="mt-6 mb-2 text-3xl font-semibold">Vedant Zope</h1>
+				<h3 class="text-gray-500 text-xl font-medium">2024 | MT | RP</h3>
 			</div>
 		</a>
 	</div>
